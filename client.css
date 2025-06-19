@@ -217,3 +217,72 @@ main {
 .dropdown:hover .dropdown-content {
   display: block;
 }
+/* Footer */
+footer {
+background-color: #141414;
+color: #fff;
+padding: 3rem 1rem;
+}
+.footer-container {
+max-width: 1200px;
+margin: auto;
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+gap: 2rem;
+}
+.footer-column {
+flex: 1 1 200px;
+min-width: 200px;
+}
+.footer-column h4 {
+font-size: 1rem;
+font-weight: 700;
+margin-bottom: 1rem;
+}
+.footer-column p,
+.footer-column li,
+.footer-column a {
+font-size: 0.85rem;
+line-height: 1.6;
+color: #ccc;
+text-decoration: none;
+}
+.footer-column a:hover {
+color: #fff;
+}
+.footer-column ul {
+list-style: none;
+padding: 0;
+}
+.footer-logo {
+max-width: 140px;
+margin-bottom: 1rem;
+}
+.social-icons {
+display: flex;
+gap: 0.5rem;
+margin-bottom: 1rem;
+}
+.social-icons img {
+width: 28px;
+height: 28px;
+}
+.gptw-badge {
+width: 80px;
+height: auto;
+}
+
+@media (max-width: 768px) {
+.footer-container {
+flex-direction: column;
+text-align: center;
+align-items: center;
+}
+.footer-column {
+align-items: center;
+}
+.social-icons {
+justify-content: center;
+}
+}
