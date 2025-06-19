@@ -1,37 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Project Videos</title>
   <link rel="stylesheet" href="project_videos.css" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
 
 </head>
+
 <body>
 
   <header>
     <div class="nav-container">
       <div class="logo-container">
-        <img id="logo-white" src="white_Img.png" class="logo visible" alt="Logo White" />
-        <img id="logo-color" src="color_Img.png" class="logo hidden" alt="Logo Color" />
+        <img id="logo-white" src="./image/white_Img.png" class="logo visible" alt="Logo White" />
+        <img id="logo-color" src="./image/color_Img.png" class="logo hidden" alt="Logo Color" />
       </div>
       <div class="nav-center">
         <nav class="nav-links">
-            <a href="#">ABOUT US</a>
-            <a href="#">SOLUTIONS</a>
-            <a href="#">INVESTORS</a>
-            <a href="#">ESG@FPEL</a>
+          <a href="#">ABOUT US</a>
+          <a href="#">SOLUTIONS</a>
+          <a href="#">INVESTORS</a>
+          <a href="#">ESG@FPEL</a>
+          <div class="dropdown">
+
             <a href="#">KNOWLEDGE HUB</a>
-            <a href="#">CAREERS</a>
-  </nav>
-</div>
+            <div class="dropdown-content">
+              <a href="project_videos.html">Project Videos</a>
+              <a href="client.html">Client Testimonials</a>
+            </div>
+          </div>
+
+          <a href="#">CAREERS</a>
+        </nav>
+      </div>
 
     </div>
   </header>
 
   <section class="hero-image-section">
-    <img src="Project-Videos-Banner.png" alt="Banner" class="hero-banner" />
+    <img src="./image/Project-Videos-Banner.png" alt="Banner" class="hero-banner" />
   </section>
 
   <section class="hero-text-section">
@@ -75,4 +85,5 @@
 
   <script src="project_videos.js"></script>
 </body>
+
 </html>
