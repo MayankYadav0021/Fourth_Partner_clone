@@ -7,41 +7,61 @@
   <title>Project Videos</title>
   <link rel="stylesheet" href="project_videos.css" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
-
 </head>
 
 <body>
-
   <header>
-    <div class="nav-container">
+    <nav class="navbar">
       <div class="logo-container">
-        <img id="logo-white" src="./image/white_Img.png" class="logo visible" alt="Logo White" />
-        <img id="logo-color" src="./image/color_Img.png" class="logo hidden" alt="Logo Color" />
+        <img id="logo-white" src="Image/white_Img.png" class="logo visible" alt="White Logo" />
+        <img id="logo-color" src="Image/color_Img.png" class="logo hidden" alt="Color Logo" />
       </div>
-      <div class="nav-center">
-        <nav class="nav-links">
-          <a href="#">ABOUT US</a>
-          <a href="#">SOLUTIONS</a>
-          <a href="#">INVESTORS</a>
-          <a href="#">ESG@FPEL</a>
-          <div class="dropdown">
 
-            <a href="#">KNOWLEDGE HUB</a>
-            <div class="dropdown-content">
+      <ul class="nav-menu">
+        <li><a href="#">ABOUT US▾</a></li>
+        <li><a href="#">SOLUTIONS▾</a></li>
+        <li><a href="#">INVESTORS</a></li>
+        <li><a href="#">ESG@FPEL</a></li>
+
+        <li class="dropdown">
+        <a href="#">KNOWLEDGE ▾</a>
+        <div class="dropdown-menu">
+          <div class="dropdown-grid">
+            <div class="dropdown-item">
+              <img src="Image/solar-panel.webp" alt="Web Dev">
+              <a href="newsmedia.html">News And Media</a>
+            </div>
+            <div class="dropdown-item">
+              <img src="Image/blogs-thumb-1.webp" alt="App Dev">
+              <a href="blogs.html">Blogs</a>
+            </div>
+            <div class="dropdown-item">
+              <img src="Image/case-studies-thumb-1.webp" alt="SEO">
+              <a href="#">Case Studies</a>
+            </div>
+            <div class="dropdown-item">
+              <img src="Image/project-video-thumb-2.webp" alt="Data Science">
               <a href="project_videos.html">Project Videos</a>
+            </div>
+            <div class="dropdown-item">
+              <img src="Image/client-testimonials-thumb-1.webp" alt="AI/ML">
               <a href="client.html">Client Testimonials</a>
             </div>
+            <div class="dropdown-item">
+              <img src="Image/solar-windmills.webp" alt="Cloud">
+              <a href="#">FAQS</a>
+            </div>
           </div>
+        </div>
+      </li>
 
-          <a href="#">CAREERS</a>
-        </nav>
-      </div>
-
-    </div>
+        <li><a href="#">CAREERS</a></li>
+      </ul>
+    </nav>
   </header>
 
   <section class="hero-image-section">
-    <img src="./image/Project-Videos-Banner.png" alt="Banner" class="hero-banner" />
+    <img src="Image/Project-Videos-Banner.png" alt="Banner" class="hero-banner" />
   </section>
 
   <section class="hero-text-section">
@@ -51,7 +71,6 @@
 
   <main>
     <div class="video-grid">
-      <!-- Sample Video Cards -->
       <div class="video-card">
         <iframe src="https://www.youtube.com/embed/-uY4WiXY61U" allowfullscreen></iframe>
         <h3>FPEL’s Maiden (ISTS) Wind Solar Hybrid Park</h3>
@@ -82,44 +101,48 @@
       </div>
     </div>
   </main>
+
   <!-- Footer -->
-  <footer>
-    <div class="footer-container">
-      <div class="footer-column"> <img src="./image/white_Img.png" alt="Fourth Partner Logo" class="footer-logo" />
-        <p> Founded by three partners in 2010, Fourth Partner Energy believes that – the customer, supplier,
-          employee, financier or any other stakeholder is the FOURTH PARTNER and therefore a focus of all our
-          business activities. </p>
-      </div>
-      <div class="footer-column">
-        <h4>Useful Links</h4>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Who We Are</a></li>
-          <li><a href="#">Solutions</a></li>
-          <li><a href="#">ESG@FPEL</a></li>
-          <li><a href="#">Blogs</a></li>
-          <li><a href="#">Case Studies</a></li>
-          <li><a href="#">Policies</a></li>
-          <li><a href="#">Certificates</a></li>
-          <li><a href="#">RMS</a></li>
-          <li><a href="#">Contact Us</a></li>
-        </ul>
-      </div>
-      <div class="footer-column">
-        <h4>Office</h4>
-        <p><strong>Fourth Partner House</strong><br /> Plot No N46, H No. 4–9–10<br /> HMT Nagar, Hyderabad
-          500076<br /> India </p>
-        <p>📞 +91–40–27158865<br /> 📧 marketing@fourthpartner.co </p>
-      </div>
-      <div class="footer-column">
-        <h4>Follow Us</h4>
-        <div class="social-icons"> <a href="#"><img src="fb.png" alt="Facebook"></a> <a href="#"><img src="yt.png"
-              alt="YouTube"></a> <a href="#"><img src="x.png" alt="X"></a> </div> <img src="gptw.png"
-          alt="Great Place to Work" class="gptw-badge" />
-      </div>
-    </div>
-    <br><p>Fourth Partner Energy © 2025. All Rights Reserved.</p>
-  </footer>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column"> <img src="Image/white_Img.png" alt="Fourth Partner Logo"
+                    class="footer-logo" />
+                <p> Founded by three partners in 2010, Fourth Partner Energy believes that – the customer, supplier,
+                    employee, financier or any other stakeholder is the FOURTH PARTNER and therefore a focus of all our
+                    business activities. </p>
+            </div>
+            <div class="footer-column">
+                <h4>Useful Links</h4>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Who We Are</a></li>
+                    <li><a href="#">Solutions</a></li>
+                    <li><a href="#">ESG@FPEL</a></li>
+                    <li><a href="#">Blogs</a></li>
+                    <li><a href="#">Case Studies</a></li>
+                    <li><a href="#">Policies</a></li>
+                    <li><a href="#">Certificates</a></li>
+                    <li><a href="#">RMS</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Office</h4>
+                <p><strong>Fourth Partner House</strong><br /> Plot No N46, H No. 4–9–10<br /> HMT Nagar, Hyderabad
+                    500076<br /> India </p>
+                <p>📞 +91–40–27158865<br /> 📧 marketing@fourthpartner.co </p>
+            </div>
+            <div class="footer-column">
+                <h4>Follow Us</h4>
+                <div class="social-icons"> <a href="#"><img src="fb.png" alt="Facebook"></a> <a href="#"><img
+                            src="yt.png" alt="YouTube"></a> <a href="#"><img src="x.png" alt="X"></a> </div> <img
+                    src="gptw.png" alt="Great Place to Work" class="gptw-badge" />
+            </div>
+        </div>
+        <br>
+        <p>Fourth Partner Energy © 2025. All Rights Reserved.</p>
+    </footer>
+
   <script src="project_videos.js"></script>
 </body>
 

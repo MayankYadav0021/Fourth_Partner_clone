@@ -1,0 +1,471 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Hero Image */
+.hero-section {
+  background-image: url('Image/NEWS-AND-MEDIA.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 430px;
+  position: relative;
+}
+
+/* Navbar Styling */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  padding-right: 100px;
+  background-color: transparent;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Logo */
+.logo {
+  height: 60px;
+  width: auto;
+}
+
+/* Navigation Menu */
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+}
+
+.nav-menu li {
+  position: relative;
+}
+
+.nav-menu a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 8px;
+  display: block;
+  transition: color 0.3s ease;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  display: none;
+  position: fixed;
+  top: 70px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  /* border: 1px solid black; */
+  background-color: #ffffff;
+  padding: 35px 100px;
+  z-index: 999;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Dropdown Grid */
+.dropdown-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 50px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Dropdown Items */
+.dropdown-item {
+  text-align: center;
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 10px;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.dropdown-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.dropdown-item a {
+  color: #000000;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.dropdown-item:hover {
+  background-color: #e7e7e7;
+  transform: scale(1.03);
+}
+
+/* Hero Text */
+.hero-text-section {
+  background-color: #ffffff;
+  text-align: center;
+  padding: 64px 16px;
+  font-size: 40px;
+  color: #000;
+  /* margin-top: 430px; */
+}
+
+/* Div Container box */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(7, 115px); /* 7 equal-width columns */
+  gap: 30px;
+  padding: 20px;
+  padding-left: 110px;
+}
+
+.grid-box {
+  display: flex;
+  width: 125px;
+  padding: 21px 27px;
+  /* padding-left: 10px;
+  padding-top: 3px; */
+  /* height: 10px; */
+  background-color: white;
+  /* border: 2px solid #ccc; */
+  border-radius: 26px;
+  text-align: center;
+  /* padding: 10px; */
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.grid-box img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  /* margin-bottom: 5px; */
+}
+
+.grid-box p {
+  font-size: 18px;
+  margin: 3px;
+  color: #000;
+  padding-left: 5px;
+  /* font-size: 14px; */
+  font-weight: bold;
+}
+
+/* Hover effect */
+.grid-box:hover {
+  /* background-color: #00d0ff; */
+  background-color: #27a1be;
+}
+.grid-box:hover p {
+  color: white;
+}
+
+.grid-box:hover img {
+  filter: brightness(0) invert(1);
+}
+
+
+/* Active/selected box */
+.grid-box.active {
+  /* background-color: #00d0ff; */
+  background-color: #27a1be;
+   /* color: white; */
+  /* border-color: #ffaa00; */
+}
+.grid-box.active p {
+  color: white;
+}
+.grid-box img {
+  filter: none;       /* default image appearance */
+  transition: filter 0.3s ease;
+}
+.grid-box.active img {
+  filter: brightness(0) invert(1);  /* makes dark img white-ish if SVG/PNG allows */
+}
+
+
+
+/* Scrolled navbar */
+.navbar.scrolled {
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.navbar.scrolled .nav-menu a {
+  color: black;
+}
+
+/* Apply scrolled styles when dropdown is hovered */
+.navbar:hover,
+.navbar:has(.dropdown:hover) {
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar:hover .nav-menu a,
+.navbar:has(.dropdown:hover) .nav-menu a {
+  color: black;
+}
+/* ---------------------------Content box ----------------------------------------- */
+
+.news-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 30px auto;
+  justify-content: left;
+  padding-left: 75px;
+}
+
+.news-card {
+  /* width: 300px;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease; */
+  width: 360px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease;
+}
+
+/* .news-card:hover {
+  transform: translateY(-5px);
+} */
+
+.news-card img {
+  /* width: 100%;
+  height: 180px;
+  object-fit: cover; */
+  width: 90%;
+  height: auto;
+  border-radius: 8px;
+  margin: 15px auto 0 auto;
+  display: block;
+}
+
+.card-text {
+  padding: 21px;
+  
+}
+
+.card-text h3 {
+  font-size: 18px;
+  margin: 20px 0;
+}
+
+.card-text p {
+  font-size: 14px;
+  color: #555;
+  padding-top: 20px;
+  padding-bottom: 25px;
+}
+
+/* .card-text a {
+  display: inline-block;
+  margin-top: 10px;
+  background-color: #1e50d9;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 6px;
+  text-decoration: none;
+} */
+ .card-text a {
+  display: inline-block;
+  margin-top: 10px;
+  background-color: #1e50d9;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-weight: 500;
+  /* border-radius: 6px; */
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.card-text a::after {
+  content: "→";
+  position: absolute;
+  right: 15px;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.card-text a:hover {
+  transform: translateX(-5px);
+  background-color: #1740b5;
+  padding-right: 35px; /* add space for the arrow */
+}
+
+.card-text a:hover::after {
+  opacity: 1;
+  right: 10px;
+}
+
+/* ==== FOOTER ==== */
+.footer {
+  background-color: #1a1a1a;
+  color: rgb(181, 179, 179);
+  padding: 50px 40px 20px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 70px;
+}
+
+.footer-section {
+  flex: 1 1 200px;
+  min-width: 200px;
+}
+
+.footer-logo {
+  width: 150px;
+  margin-bottom: 15px;
+}
+
+.footer-section h4 {
+  color: white;
+  margin-bottom: 15px;
+}
+
+.footer-section p, .footer-section a, .footer-bottom {
+  color: #ababab;
+  font-size: 14px;
+  line-height: 1.6;
+  text-decoration: none;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section li {
+  margin-bottom: 8px;
+}
+
+.footer-section a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 30px;
+  font-size: 13px;
+  border-top: 1px solid #444;
+}
+.links-grid {
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.links-grid ul {
+  list-style: none;
+  padding: 0;
+}
+
+.links-grid li {
+  margin-bottom: 8px;
+}
+
+.links-grid a {
+  color: #ababab;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.links-grid a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+
+.social-icons img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.award-badge {
+  width: 90px;
+  margin-top: 20px;
+}
+
+/* ==== FLOATING FIXED ICONS ==== */
+.floating-buttons {
+  position: fixed;
+  top: 45%;
+  right: 5px;
+  display: flex;
+  flex-direction: column;
+  /* gap: 3px; */
+  z-index: 999;
+}
+
+.float-btn img {
+  width: 45px;
+  height: 45px;
+  background-color: #0b3057;
+  padding: 7px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.float-btn img:hover {
+  background-color: #2a5ade;
+}
+
+/* ==== HELP BUTTON ==== */
+.help-button {
+  
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #003cbb;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 12px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 999;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease;
+}
+.help-button img {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+
+.help-button:hover {
+  background-color: #01339f;
+}

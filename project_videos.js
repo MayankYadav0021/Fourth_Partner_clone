@@ -17,3 +17,32 @@ window.addEventListener("scroll", function () {
     colorLogo.classList.add("hidden");
   }
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const dropdown = document.getElementById("knowledgeHubDropdown");
+  const dropdownMenu = document.getElementById("dropdownMenu");
+
+  dropdown.addEventListener("click", function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    dropdown.classList.toggle("show");
+  });
+
+  document.addEventListener("click", function (e) {
+    if (!dropdown.contains(e.target)) {
+      dropdown.classList.remove("show");
+    }
+  });
+
+  dropdown.addEventListener("mouseenter", () => {
+    if (!dropdown.classList.contains("show")) {
+      dropdownMenu.style.display = "block";
+    }
+  });
+
+  dropdown.addEventListener("mouseleave", () => {
+    if (!dropdown.classList.contains("show")) {
+      dropdownMenu.style.display = "none";
+    }
+  });
+});

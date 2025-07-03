@@ -1,0 +1,418 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+.hero-text-para{
+    font-size: small;
+}
+
+/* Hero Image */
+.hero-section {
+  background-image: url('Image/Blogs.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 430px;
+  position: relative;
+}
+
+/* Navbar Styling */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  font-weight: bold;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  padding-right: 100px;
+  background-color: transparent;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Logo */
+.logo {
+  height: 60px;
+  width: auto;
+}
+
+/* Navigation Menu */
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+}
+
+.nav-menu li {
+  position: relative;
+}
+
+.nav-menu a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 8px;
+  display: block;
+  transition: color 0.3s ease;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  display: none;
+  position: fixed;
+  top: 70px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  /* border: 1px solid black; */
+  background-color: #ffffff;
+  padding: 35px 100px;
+  z-index: 999;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Dropdown Grid */
+.dropdown-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 50px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Dropdown Items */
+.dropdown-item {
+  text-align: center;
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 10px;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.dropdown-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.dropdown-item a {
+  color: #000000;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.dropdown-item:hover {
+  background-color: #e7e7e7;
+  transform: scale(1.03);
+}
+
+/* Hero Text */
+.hero-text-section {
+  background-color: #ffffff;
+  text-align: center;
+  padding: 64px 16px;
+  font-size: 40px;
+  color: #000;
+  /* margin-top: 430px; */
+}
+
+/* Div Container box */
+
+
+/* Scrolled navbar */
+.navbar.scrolled {
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.navbar.scrolled .nav-menu a {
+  color: black;
+}
+
+/* Apply scrolled styles when dropdown is hovered */
+.navbar:hover,
+.navbar:has(.dropdown:hover) {
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar:hover .nav-menu a,
+.navbar:has(.dropdown:hover) .nav-menu a {
+  color: black;
+}
+/* ---------------------------Content box ----------------------------------------- */
+
+.news-card {
+  width: 340px;
+  height: 420px;
+  background: #fff;
+  /* border-radius: 12px; */
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease;
+  position: relative;
+}
+.news-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  padding: 40px 60px;
+  margin-bottom: 80px; /* ⬅️ Gap before footer */
+}
+
+
+.news-card:hover {
+  transform: translateY(-6px);
+}
+
+.card-image-wrapper {
+  position: relative;
+}
+
+.card-image-wrapper img {
+  width: 100%;
+  height: 250px;
+  display: block;
+}
+
+.card-date-overlay {
+  position: absolute;
+  bottom: -30px;
+  right: 20px;
+  background-color: #131313;
+  color: #fff;
+  padding: 10px 12px;
+  border-radius: 4px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  min-width: 48px;
+}
+
+.card-date-overlay .day {
+  font-size: 40px;       /* Big date */
+  line-height: 1;
+}
+
+.card-date-overlay .month {
+  font-size: 11px;       /* Small month */
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  line-height: 1;
+  margin-top: 4px;
+  display: block;
+}
+
+
+.card-text-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.card-text {
+  padding: 50px 20px 20px 20px;
+  text-align: left;
+}
+
+.card-text h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #111;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* ========================== LOAD MORE ================================ */
+.load-more-container {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+#loadMoreBtn {
+  background-color: #1e50d9;
+  color: #fff;
+  padding: 14px 31px;
+  font-size: 16px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+#loadMoreBtn:hover {
+  background-color: #1437aa;
+}
+
+
+/* ========================== FOOTER =================================== */
+.footer {
+  background-color: #1a1a1a;
+  color: rgb(181, 179, 179);
+  padding: 50px 40px 20px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 70px;
+}
+
+.footer-section {
+  flex: 1 1 200px;
+  min-width: 200px;
+}
+
+.footer-logo {
+  width: 150px;
+  margin-bottom: 15px;
+}
+
+.footer-section h4 {
+  color: white;
+  margin-bottom: 15px;
+}
+
+.footer-section p, .footer-section a, .footer-bottom {
+  color: #ababab;
+  font-size: 14px;
+  line-height: 1.6;
+  text-decoration: none;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section li {
+  margin-bottom: 8px;
+}
+
+.footer-section a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 30px;
+  font-size: 13px;
+  border-top: 1px solid #444;
+}
+.links-grid {
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.links-grid ul {
+  list-style: none;
+  padding: 0;
+}
+
+.links-grid li {
+  margin-bottom: 8px;
+}
+
+.links-grid a {
+  color: #ababab;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.links-grid a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+
+.social-icons img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.award-badge {
+  width: 90px;
+  margin-top: 20px;
+}
+
+/* ==== FLOATING FIXED ICONS ==== */
+.floating-buttons {
+  position: fixed;
+  top: 45%;
+  right: 5px;
+  display: flex;
+  flex-direction: column;
+  /* gap: 3px; */
+  z-index: 999;
+}
+
+.float-btn img {
+  width: 45px;
+  height: 45px;
+  background-color: #0b3057;
+  padding: 7px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.float-btn img:hover {
+  background-color: #2a5ade;
+}
+
+/* ==== HELP BUTTON ==== */
+.help-button {
+  
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #003cbb;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 12px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 999;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease;
+}
+.help-button img {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+
+.help-button:hover {
+  background-color: #01339f;
+}
+/* Logo visibility control */
+.visible {
+  display: inline;
+}
+
+.hidden {
+  display: none;
+}
