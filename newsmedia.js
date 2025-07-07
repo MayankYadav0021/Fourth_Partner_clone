@@ -14,21 +14,21 @@ function updateNavbarAndHero() {
   hero.classList.toggle('alt-background', scrolled);
 
   if (scrolled) {
-    logo.src = "Image/logo-dark.png";
+    logo.src = "Images/logo-dark.png";
   } else {
-    logo.src = "Image/logo-light.png";
+    logo.src = "Images/logo-light.png";
   }
 }
 
 // Handle full navbar hover (including logo change)
 navbar.addEventListener('mouseenter', () => {
-  logo.src = "Image/logo-dark.png";
+  logo.src = "Images/logo-dark.png";
   navbar.classList.add('scrolled');
 });
 
 navbar.addEventListener('mouseleave', () => {
   if (window.scrollY <= 50) {
-    logo.src = "Image/logo-light.png";
+    logo.src = "Images/logo-light.png";
     navbar.classList.remove('scrolled');
   }
 });
@@ -43,7 +43,7 @@ window.addEventListener('scroll', updateNavbarAndHero);
 dropdown.addEventListener('mouseenter', () => {
   clearTimeout(dropdownTimeout);
   dropdownMenu.style.display = 'block';
-  logo.src = "Image/logo-dark.png";
+  logo.src = "Images/logo-dark.png";
   navbar.classList.add('scrolled');
 });
 
@@ -52,7 +52,7 @@ dropdown.addEventListener('mouseleave', () => {
   dropdownTimeout = setTimeout(() => {
     dropdownMenu.style.display = 'none';
     if (window.scrollY <= 50) {
-      logo.src = "Image/logo-light.png";
+      logo.src = "Images/logo-light.png";
       navbar.classList.remove('scrolled');
     }
   }, 300); // 300ms delay
@@ -68,7 +68,7 @@ dropdownMenu.addEventListener('mouseleave', () => {
   dropdownTimeout = setTimeout(() => {
     dropdownMenu.style.display = 'none';
     if (window.scrollY <= 50) {
-      logo.src = "Image/logo-light.png";
+      logo.src = "Images/logo-light.png";
       navbar.classList.remove('scrolled');
     }
   }, 300);

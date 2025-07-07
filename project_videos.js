@@ -1,48 +1,75 @@
-const whiteLogo = document.getElementById("logo-white");
-const colorLogo = document.getElementById("logo-color");
+const navbar = document.getElementById('navbar');
+const dropdown = document.querySelector('.dropdown');
+const dropdownMenu = document.querySelector('.dropdown-menu');
+const hero = document.querySelector('.hero-section');
+const logo = document.getElementById('navbar-logo');
 
-window.addEventListener("scroll", function () {
-  const header = document.querySelector("header");
-  if (window.scrollY > 50) {
-    header.classList.add("scrolled");
-    whiteLogo.classList.remove("visible");
-    whiteLogo.classList.add("hidden");
-    colorLogo.classList.remove("hidden");
-    colorLogo.classList.add("visible");
+let dropdownTimeout; // for delay control
+
+// Update navbar and hero based on scroll
+function updateNavbarAndHero() {
+  const scrolled = window.scrollY > 50;
+
+  navbar.classList.toggle('scrolled', scrolled);
+  hero.classList.toggle('alt-background', scrolled);
+
+  if (scrolled) {
+    logo.src = "Image/logo-dark.png";
   } else {
-    header.classList.remove("scrolled");
-    whiteLogo.classList.remove("hidden");
-    whiteLogo.classList.add("visible");
-    colorLogo.classList.remove("visible");
-    colorLogo.classList.add("hidden");
+    logo.src = "Image/logo-light.png";
+  }
+}
+
+// Handle full navbar hover (including logo change)
+navbar.addEventListener('mouseenter', () => {
+  logo.src = "Image/logo-dark.png";
+  navbar.classList.add('scrolled');
+});
+
+navbar.addEventListener('mouseleave', () => {
+  if (window.scrollY <= 50) {
+    logo.src = "Image/logo-light.png";
+    navbar.classList.remove('scrolled');
   }
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  const dropdown = document.getElementById("knowledgeHubDropdown");
-  const dropdownMenu = document.getElementById("dropdownMenu");
+// Scroll detection
+window.addEventListener('scroll', updateNavbarAndHero);
 
-  dropdown.addEventListener("click", function (e) {
-    e.preventDefault();
-    e.stopPropagation();
-    dropdown.classList.toggle("show");
-  });
 
-  document.addEventListener("click", function (e) {
-    if (!dropdown.contains(e.target)) {
-      dropdown.classList.remove("show");
+
+// DROPDOWN STICKINESS LOGIC 🧲
+// Open dropdown and cancel closing timer
+dropdown.addEventListener('mouseenter', () => {
+  clearTimeout(dropdownTimeout);
+  dropdownMenu.style.display = 'block';
+  logo.src = "Image/logo-dark.png";
+  navbar.classList.add('scrolled');
+});
+
+// Delay closing of dropdown on mouse leave
+dropdown.addEventListener('mouseleave', () => {
+  dropdownTimeout = setTimeout(() => {
+    dropdownMenu.style.display = 'none';
+    if (window.scrollY <= 50) {
+      logo.src = "Image/logo-light.png";
+      navbar.classList.remove('scrolled');
     }
-  });
+  }, 300); // 300ms delay
+});
 
-  dropdown.addEventListener("mouseenter", () => {
-    if (!dropdown.classList.contains("show")) {
-      dropdownMenu.style.display = "block";
-    }
-  });
+// Keep menu open if mouse is inside the dropdown
+dropdownMenu.addEventListener('mouseenter', () => {
+  clearTimeout(dropdownTimeout);
+});
 
-  dropdown.addEventListener("mouseleave", () => {
-    if (!dropdown.classList.contains("show")) {
-      dropdownMenu.style.display = "none";
+// Close menu if user leaves dropdown menu
+dropdownMenu.addEventListener('mouseleave', () => {
+  dropdownTimeout = setTimeout(() => {
+    dropdownMenu.style.display = 'none';
+    if (window.scrollY <= 50) {
+      logo.src = "Image/logo-light.png";
+      navbar.classList.remove('scrolled');
     }
-  });
+  }, 300);
 });

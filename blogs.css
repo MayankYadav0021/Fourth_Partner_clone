@@ -15,7 +15,7 @@ body {
 
 /* Hero Image */
 .hero-section {
-  background-image: url('Image/Blogs.webp');
+  background-image: url('Images/Blogs.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -28,7 +28,7 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  font-weight: bold;
+  /* font-weight: bold; */
   width: 100%;
   z-index: 1000;
   display: flex;
@@ -407,12 +407,4 @@ body {
 
 .help-button:hover {
   background-color: #01339f;
-}
-/* Logo visibility control */
-.visible {
-  display: inline;
-}
-
-.hidden {
-  display: none;
 }

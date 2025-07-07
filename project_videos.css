@@ -1,74 +1,45 @@
+/* Basic Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}   
+  
+}
+
 body {
-  font-family: 'Montserrat', sans-serif;
-  background: #082032;
-  color: #fff;
-}
-.logo {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: auto;
-  width: auto;
-  transition: opacity 0.5s ease-in-out;
-  pointer-events: none;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0f2a43
 }
 
-.logo.visible {
-  opacity: 1;
-}
-
-.logo.hidden {
-  opacity: 0;
-}
-.logo-container {
-  position: relative;
-  width: 10px;
-  height: 4px;
-}
-
-.logo-container img {
-  height: 45px;
-}
-header {
+/* Navbar Styling */
+.navbar {
+  
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
   z-index: 1000;
-  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  padding-right: 100px;
   background-color: transparent;
-  transition: background-color 0.7s ease, box-shadow 0.7s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-header.scrolled {
-  background-color: #ffffff;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+/* Logo */
+.logo {
+  height: 60px;
+  width: auto;
 }
 
-header .logo-container img {
-  content: url("Image/white_Img.png");
-}
-
-header.scrolled .logo-container img {
-  content: url("Image/color_Img.png");
-}
-header.scrolled .nav-menu a {
-  color: black;
-}
-.navbar {
-  background-color: #f5d4fe00;
-  padding: 10px 0;
-}
-
+/* Navigation Menu */
 .nav-menu {
   list-style: none;
   display: flex;
-  justify-content: center;
-  gap: 30px;
+  gap: 10px;
 }
 
 .nav-menu li {
@@ -76,74 +47,172 @@ header.scrolled .nav-menu a {
 }
 
 .nav-menu a {
-  color: rgb(10, 10, 10);
+  color: white;
   text-decoration: none;
-  padding: 10px 15px;
+  padding: 10px 8px;
   display: block;
-  transition: background 0.3s;
+  transition: color 0.3s ease;
 }
 
-
-
-.dropdown {
-  position:fixed;
-}
-
-
+/* Dropdown Menu */
 .dropdown-menu {
   display: none;
-  position: fixed; /* change from fixed to absolute */
-  top: 80px;
+  position: fixed;
+  top: 70px;
   left: 0;
-  right:0;
-  width: 100vw;
-  background-color: #f6f6f6;
-  padding: 25px 100px;
-  z-index: 1000;
-  border-top: 1px solid #ccc;
+  right: 0;
+  width: 100%;
+  /* border: 1px solid black; */
+  background-color: #ffffff;
+  padding: 35px 100px;
+  z-index: 999;
 }
 
-
-.dropdown.show .dropdown-menu,
 .dropdown:hover .dropdown-menu {
   display: block;
 }
 
+/* Dropdown Grid */
 .dropdown-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 40px;
+  gap: 50px;
   max-width: 1200px;
   margin: auto;
 }
 
+/* Dropdown Items */
 .dropdown-item {
   text-align: center;
-  background: white;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, background-color 0.3s ease;
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 10px;
+  transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
 .dropdown-item img {
   width: 100%;
   height: auto;
-  object-fit: cover;
-  border-bottom: 1px solid #ddd;
+  border-radius: 6px;
+  margin-bottom: 10px;
 }
 
 .dropdown-item a {
-  display: block;
-  padding: 10px;
-  color: #000;
+  color: #000000;
   font-weight: bold;
   text-decoration: none;
 }
 
 .dropdown-item:hover {
-  background-color: #eaeaea;
-  transform: translateY(-2px);
+  background-color: #e7e7e7;
+  transform: scale(1.03);
+}
+
+/* Hero Text */
+.hero-text-section {
+  background-color: #ffffff;
+  text-align: center;
+  padding: 64px 16px;
+  font-size: 40px;
+  color: #000;
+  /* margin-top: 430px; */
+}
+
+/* Div Container box */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(7, 115px); /* 7 equal-width columns */
+  gap: 30px;
+  padding: 20px;
+  padding-left: 110px;
+}
+
+.grid-box {
+  display: flex;
+  width: 125px;
+  padding: 21px 27px;
+  /* padding-left: 10px;
+  padding-top: 3px; */
+  /* height: 10px; */
+  background-color: white;
+  /* border: 2px solid #ccc; */
+  border-radius: 26px;
+  text-align: center;
+  /* padding: 10px; */
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.grid-box img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  /* margin-bottom: 5px; */
+}
+
+.grid-box p {
+  font-size: 18px;
+  margin: 3px;
+  color: #000;
+  padding-left: 5px;
+  /* font-size: 14px; */
+  font-weight: bold;
+}
+
+/* Hover effect */
+.grid-box:hover {
+  /* background-color: #00d0ff; */
+  background-color: #27a1be;
+}
+.grid-box:hover p {
+  color: white;
+}
+
+.grid-box:hover img {
+  filter: brightness(0) invert(1);
+}
+
+
+/* Active/selected box */
+.grid-box.active {
+  /* background-color: #00d0ff; */
+  background-color: #27a1be;
+   /* color: white; */
+  /* border-color: #ffaa00; */
+}
+.grid-box.active p {
+  color: white;
+}
+.grid-box img {
+  filter: none;       /* default image appearance */
+  transition: filter 0.3s ease;
+}
+.grid-box.active img {
+  filter: brightness(0) invert(1);  /* makes dark img white-ish if SVG/PNG allows */
+}
+
+
+
+/* Scrolled navbar */
+.navbar.scrolled {
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.navbar.scrolled .nav-menu a {
+  color: black;
+}
+
+/* Apply scrolled styles when dropdown is hovered */
+.navbar:hover,
+.navbar:has(.dropdown:hover) {
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar:hover .nav-menu a,
+.navbar:has(.dropdown:hover) .nav-menu a {
+  color: black;
 }
 
 main {
@@ -182,13 +251,18 @@ main {
 .video-card h3 {
   padding: 0.8rem;
   font-size: 1rem;
+  background-color: #04273a;
+  color: white;
 }
 
 .hero-image-section {
   width: 100%;
   height: auto;
   overflow: hidden;
+  height: auto;
+  min-height: 63px;
 }
+
 
 .hero-banner {
   width: 100%;
@@ -197,7 +271,7 @@ main {
   display: block;
 }
 .hero-text-section {
-  background-color: #082032;
+  background-color: #0f2a43;
   text-align: center;
   padding: 2rem 1rem;
 }
@@ -208,12 +282,14 @@ main {
   letter-spacing: 1.5px;
   margin-bottom: 0.5rem;
   opacity: 0.8;
+  color: white;
 }
 .hero-text-section h1 {
   font-size: 2.2rem;
   font-weight: 700;
   max-width: 90%;
   margin: 0 auto;
+  color: white;
 }
 @media (min-width: 768px) {
   .hero-text-section h1 {
@@ -289,4 +365,12 @@ align-items: center;
 .social-icons {
 justify-content: center;
 }
+}
+.navbar.scrolled {
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.navbar.scrolled .nav-menu a {
+  color: black;
 }

@@ -3,48 +3,28 @@ const navbar = document.getElementById('navbar');
 const dropdown = document.querySelector('.dropdown');
 const dropdownMenu = document.querySelector('.dropdown-menu');
 const hero = document.querySelector('.hero-section');
+const logo = document.getElementById('navbar-logo');
 
-// Logos
-const logoWhite = document.getElementById('logo-white');
-const logoColor = document.getElementById('logo-color');
-
-// Function to show the correct logo
-function updateLogoVisibility(scrolled) {
-  if (scrolled) {
-    logoWhite.classList.add('hidden');
-    logoWhite.classList.remove('visible');
-    logoColor.classList.add('visible');
-    logoColor.classList.remove('hidden');
-  } else {
-    logoWhite.classList.add('visible');
-    logoWhite.classList.remove('hidden');
-    logoColor.classList.add('hidden');
-    logoColor.classList.remove('visible');
-  }
-}
-
-// Function to update navbar and hero on scroll
+// Update navbar and hero based on scroll
 function updateNavbarAndHero() {
   const scrolled = window.scrollY > 50;
   navbar.classList.toggle('scrolled', scrolled);
   hero.classList.toggle('alt-background', scrolled);
-  updateLogoVisibility(scrolled);
+  logo.src = scrolled ? "Images/logo-dark.png" : "Images/logo-light.png";
 }
 
-// Hover effect on navbar
 navbar.addEventListener('mouseenter', () => {
-  updateLogoVisibility(true);
+  logo.src = "Images/logo-dark.png";
   navbar.classList.add('scrolled');
 });
 
 navbar.addEventListener('mouseleave', () => {
   if (window.scrollY <= 50) {
-    updateLogoVisibility(false);
+    logo.src = "Images/logo-light.png";
     navbar.classList.remove('scrolled');
   }
 });
 
-// Listen for scroll
 window.addEventListener('scroll', updateNavbarAndHero);
 
 // === Dropdown Sticky Logic ===
@@ -53,7 +33,7 @@ let dropdownTimeout;
 dropdown.addEventListener('mouseenter', () => {
   clearTimeout(dropdownTimeout);
   dropdownMenu.style.display = 'block';
-  updateLogoVisibility(true);
+  logo.src = "Images/logo-dark.png";
   navbar.classList.add('scrolled');
 });
 
@@ -61,7 +41,7 @@ dropdown.addEventListener('mouseleave', () => {
   dropdownTimeout = setTimeout(() => {
     dropdownMenu.style.display = 'none';
     if (window.scrollY <= 50) {
-      updateLogoVisibility(false);
+      logo.src = "Images/logo-light.png";
       navbar.classList.remove('scrolled');
     }
   }, 300);
@@ -75,7 +55,7 @@ dropdownMenu.addEventListener('mouseleave', () => {
   dropdownTimeout = setTimeout(() => {
     dropdownMenu.style.display = 'none';
     if (window.scrollY <= 50) {
-      updateLogoVisibility(false);
+      logo.src = "Images/logo-light.png";
       navbar.classList.remove('scrolled');
     }
   }, 300);
@@ -87,7 +67,7 @@ let currentIndex = 0;
 const batchSize = 6;
 
 function loadNewsCards() {
-  fetch(`blogs.json`)
+  fetch(`blogsdata/Blogsboxes.json`)
     .then(response => response.json())
     .then(data => {
       allCards = data;
